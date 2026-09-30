@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* BhaiWay design tokens — brand blue #3a43b3 */
+:root {
+  --bw-bg: #f3f4fb;
+  --bw-surface: #ffffff;
+  --bw-elevated: #eceef8;
+  --bw-border: #d5d9ec;
+  --bw-text-primary: #12163a;
+  --bw-text-secondary: #3d4570;
+  --bw-text-muted: #6b7399;
+  --bw-brand: #3a43b3;
+  --bw-brand-hover: #2f3794;
+  --bw-brand-soft: #e8eaf8;
+  --bw-brand-muted: #9aa0d6;
+  --bw-success: #0f7a4a;
+  --bw-success-soft: #e6f7ef;
+  --bw-warning: #b45309;
+  --bw-warning-soft: #fff4e5;
+  --bw-danger: #c81e1e;
+  --bw-danger-soft: #fef2f2;
+  --bw-info: #3a43b3;
+  --bw-info-soft: #e8eaf8;
+  --bw-office: #2563eb;
+  --bw-office-soft: #eff6ff;
+  --bw-office-border: #93c5fd;
+  --bw-outstation: #c2410c;
+  --bw-outstation-soft: #fff7ed;
+  --bw-outstation-border: #fdba74;
+  --bw-shell-accent: linear-gradient(135deg, #3a43b3 0%, #5b63d1 55%, #7c84e8 100%);
+  --background: var(--bw-bg);
+  --foreground: var(--bw-text-primary);
+}
+
+/* Dark theme — true black canvas, charcoal panels, blue accents */
+.dark {
+  --bw-bg: #000000;
+  --bw-surface: #0a0a0a;
+  --bw-elevated: #141414;
+  --bw-border: #2a2a2a;
+  --bw-text-primary: #f5f5f5;
+  --bw-text-secondary: #b3b3b3;
+  --bw-text-muted: #808080;
+  --bw-brand: #6b74e0;
+  --bw-brand-hover: #8a91ea;
+  --bw-brand-soft: #12131f;
+  --bw-brand-muted: #4a5299;
+  --bw-success: #34d399;
+  --bw-success-soft: #0a1a12;
+  --bw-warning: #fbbf24;
+  --bw-warning-soft: #1a1406;
+  --bw-danger: #f87171;
+  --bw-danger-soft: #1a0a0a;
+  --bw-info: #7b84e8;
+  --bw-info-soft: #10121c;
+  --bw-office: #60a5fa;
+  --bw-office-soft: #0a1018;
+  --bw-office-border: #1e3a5f;
+  --bw-outstation: #fb923c;
+  --bw-outstation-soft: #1a1008;
+  --bw-outstation-border: #7c3d12;
+  --bw-shell-accent: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  --background: var(--bw-bg);
+  --foreground: var(--bw-text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bw-bg);
+  color: var(--bw-text-primary);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bw-brand);
+  outline-offset: 2px;
+}
+
+.bw-main-canvas {
+  background:
+    radial-gradient(ellipse at top, color-mix(in srgb, var(--bw-brand) 10%, transparent), transparent 55%),
+    var(--bw-bg);
+}
+
+.dark .bw-main-canvas {
+  background: #000000;
+}
+
+.dark body {
+  background: #000000;
+}
